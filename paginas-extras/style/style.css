@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+:root {
+    --cor-fonte-principal: black;
+    --cor-fundo-h2: rgb(202, 198, 198);
+    --cor-fundo-input: rgb(231, 227, 227);
+    --cor-fundo-pontos: rgb(228, 228, 228);
+    --cor-sombra: rgba(0, 0, 0, 0.418);
+    --cor-fundo-menu-hover: rgb(241, 239, 239);
+    --cor-fundo-menu-trans: rgb(241, 239, 239, 0.95);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Editando o header */
+
+header {
+    padding: 20px;
+    border-bottom: 2px solid var(--cor-fonte-principal);
+}
+
+header p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* Menu Lateral */
+
+div#nav div.nav {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    height: 60px;
+    width: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+    /* border: 2px solid var(--cor-fonte-principal); */
+}
+
+div#nav div.nav > div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+div#nav div.nav > div > div {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+div#nav div.nav > div > div:hover {
+    background-color: var(--cor-fundo-menu-hover);
+    cursor: pointer;
+    transition: .3s;
+}
+
+div#menu-simbolo {
+    font-size: 50px;
+    position: absolute;
+    top: -5px;
+    left: 8px;
+}
+
+nav#menu-lateral {
+    position: fixed;
+    width: 250px;
+    background-color: var(--cor-fundo-menu-trans);
+    height: 100vh;
+    top: 0px;
+    left: -250px;
+    padding-top: 70px;
+    border-right: 2px solid var(--cor-fonte-principal);
+}
+
+nav hr {
+    margin-bottom: 20px;
+    border: none;
+}
+
+nav div {
+    height: 30px;
+    padding-top: 7px;
+}
+
+nav div:hover {
+    background-color: var(--cor-fundo-h2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-fonte-principal);
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}

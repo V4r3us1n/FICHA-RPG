@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <nav id="menu-lateral">
+        <hr>
+        <div id="dados-principais">
+            <a href="index.html">Dados Principais</a>
+        </div>
+        <div id="info-dados">
+            <a href="paginas-extras/info-ficha.html">Informações da Ficha</a>
+        </div>
+    </nav>
     <header>
         <p>FICHA AUTOMÁTICA RPG</p>
-        <div class="menu"></div>
+        <div id="nav">
+            <div class="nav">
+                <div class="nav-nav">
+                    <div id="div-menu-simbolo" onclick="chamarMenu()">
+                        <div id="menu-simbolo">☰</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <div id="main">
         <main>
@@ -487,7 +504,7 @@
                             <option value="ab+">AB+</option>
                             <option value="ab-">AB-</option>
                             <option value="o+">O+</option>
-                            <option value="o-">O+</option>
+                            <option value="o-">O-</option>
                         </select>
                     </p>
                 </div>
@@ -596,6 +613,11 @@
                             <div class="dm pp">0</div>
                         </div>
                     </div>
+                    <div class="tamanho-button">
+                        <div class="button" onclick="calcPontosPrincipais()">
+                            Definir Status
+                        </div>
+                    </div>
                 </div>
             </section>
             <section id="pontos-adicionais" class="secao-dados">
@@ -617,6 +639,11 @@
                         <div id="def" class="div-pa">
                             <p>Defesa:</p>
                             <div class="def pa">0</div>
+                        </div>
+                    </div>
+                    <div class="tamanho-button">
+                        <div class="button" onclick="calcPontosAdicionais()">
+                            Definir Status
                         </div>
                     </div>
                 </div>

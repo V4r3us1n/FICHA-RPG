@@ -1094,3 +1094,101 @@ function novaLinhaTraumas() {
     
     }
 }
+
+/* Calculando os Pontos Principais */
+
+let valor_pv_div = document.querySelector("div#pv div.pv");
+
+let valor_pe_div = document.querySelector("div#pe div.pe");
+
+let valor_sanidade_div = document.querySelector("div#san div.san");
+
+let valor_sorte_div = document.querySelector("div#sorte div.sorte");
+let d100_sorte;
+
+let valor_dm_div = document.querySelector("div#dm div.dm");
+
+let pp_cont = 0;
+
+function calcPontosPrincipais() {
+    if (pp_cont == 0) {
+        if (pontos_restantes != 0) {
+            alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Principais");
+        } else {
+            /* Pontos de Vida */
+    
+            /* Pontos de Esforço */
+    
+            /* Sanidade */
+    
+            /* Sorte */
+            d100_sorte = Math.floor(Math.random() * 100);
+            console.log(d100_sorte);
+            valor_sorte_div.innerHTML = `${d100_sorte}`;
+    
+            /* DM */
+        }
+    } else {
+        alert("[ERRO!] Você só pode Definir Status 1 vez")
+    }
+
+    pp_cont = 1;
+}
+
+/* Calculando os Pontos Adicionais */
+
+let valor_desl_div = document.querySelector("div#desl div.desl");
+
+let valor_inic_div = document.querySelector("div#inic div.inic");
+
+let valor_def_div = document.querySelector("div#def div.def");
+
+let pa_cont = 0;
+
+function calcPontosAdicionais() {
+    if (pa_cont == 0) {
+        if (pontos_restantes != 0) {
+            alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Adicionais");
+        } else {
+            /* Deslocamento */
+    
+            /* Iniciativa */
+    
+            /* Defesa */
+        }
+    } else {
+        alert("[ERRO!] Você só pode Definir Status 1 vez")
+    }
+    
+    pa_cont = 1;
+}
+
+/* Animação do Surgimento do Menu */
+
+let menu = document.getElementById("div-menu-simbolo");
+let div_menu = document.getElementById("menu-lateral");
+let body = document.querySelector("body");
+
+let cont_menu = 0;
+
+function chamarMenu() {
+    if (cont_menu % 2 == 0) {
+        div_menu.style.left = "0px";
+        div_menu.style.transition = "1s";
+
+        menu.style.left = "150px";
+        menu.style.transition = "1s";
+        menu.style.transitionDelay = ".1s";
+
+        body.style.overflowY = "hidden";
+    } else {
+        div_menu.style.left = "-250px";
+        div_menu.style.transition = "1s";
+
+        menu.style.left = "10px";
+        menu.style.transition = ".5s";
+
+        body.style.overflowY = "unset";
+    }
+    cont_menu++;
+}
