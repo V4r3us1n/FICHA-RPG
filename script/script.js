@@ -1129,7 +1129,27 @@ function calcPontosPrincipais() {
             /* DM */
         }
     } else {
-        alert("[ERRO!] Você só pode Definir Status 1 vez")
+        let senha2 = prompt("Digite a senha: ");
+        if (senha2 == "rpg-de-mesa") {
+            if (pontos_restantes != 0) {
+                alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Principais");
+            } else {
+                /* Pontos de Vida */
+        
+                /* Pontos de Esforço */
+        
+                /* Sanidade */
+        
+                /* Sorte */
+                d100_sorte = Math.floor(Math.random() * 100);
+                console.log(d100_sorte);
+                valor_sorte_div.innerHTML = `${d100_sorte}`;
+        
+                /* DM */
+            }
+        } else {
+            alert("[ERRO!] Você só pode Definir Status 1 vez");
+        }
     }
 
     pp_cont = 1;
@@ -1157,9 +1177,22 @@ function calcPontosAdicionais() {
             /* Defesa */
         }
     } else {
-        alert("[ERRO!] Você só pode Definir Status 1 vez")
+        let senha1 = prompt("Digite a senha: ");
+        if (senha1 == "rpg-de-mesa") {
+            if (pontos_restantes != 0) {
+                alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Adicionais");
+            } else {
+                /* Deslocamento */
+        
+                /* Iniciativa */
+        
+                /* Defesa */
+            }
+        } else {
+            alert("[ERRO!] Você só pode Definir Status 1 vez");
+        }
     }
-    
+
     pa_cont = 1;
 }
 
