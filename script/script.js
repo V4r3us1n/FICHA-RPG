@@ -914,199 +914,19 @@ function diminuirVont() {
     }
 }
 
-/* Adicionando Borda na parte inferior da ultima linha da tabela */
-
-let inicio_borda_inferior = 0;
-
-let input_esquerdo_ant;
-let input_direito_ant;
-let input_esquerdo;
-let input_direito;
-
-/*
-
-function bordaInferiorArmas() {
-    let linhasTabela_Armas = document.getElementsByClassName("armas-info");
-    console.log(linhasTabela_Armas.length)
-    if (inicio_borda_inferior == 0) {
-        for (let i = 0; i < linhasTabela_Armas.length; i++) {
-            if (i == linhasTabela_Armas.length - 1 ) {
-                linhasTabela_Armas[i].classList.add("bordas-inferiores");
-                linhasTabela_Armas[i].children[1].classList.add("borda-baixo-esquerda");
-                linhasTabela_Armas[i].children[11].classList.add("borda-baixo-direita");
-            
-                input_direito_ant = document.getElementById(`tipo${i + 1}`);
-                input_esquerdo_ant = document.getElementById(`tipo${i + 1}`);
-            }
-        }
-        inicio_borda_inferior = 1;
-    } else {
-        for (let i = 0; i < linhasTabela_Armas.length; i++) {
-            if (i == linhasTabela_Armas.length - 1 ) {
-                
-                input_esquerdo_ant.classList.remove("borda-baixo-esquerda");
-                document.getElementById(`tipo${i}`).classList.remove("borda-baixo-esquerda")
-                document.getElementById(`tipo${i + 1}`).classList.add("borda-baixo-esquerda");
-
-                /*
-                linhasTabela_Armas[i].classList.add("bordas-inferiores");
-                linhasTabela_Armas[i].children[0].classList.add("borda-baixo-esquerda");
-                linhasTabela_Armas[i].children[5].classList.add("borda-baixo-direita");
-                
-            } else {
-                linhasTabela_Armas[i].classList.remove("bordas-inferiores");
-                linhasTabela_Armas[i].children[1].classList.remove("borda-baixo-esquerda");
-                linhasTabela_Armas[i].children[11].classList.remove("borda-baixo-direita");
-            }
-        }
-    }
-}
-
-bordaInferiorArmas();
-
-*/
-
-/* Adicionar Nova Linha na Tabela Armas */
-
-let tabela_armas = document.querySelector("div#tabela-armas");
-
-function novaLinhaArmas() {
-    let nova_linha_armas = document.createElement("div");
-    tabela_armas.appendChild(nova_linha_armas);
-    nova_linha_armas.classList.add("armas-info");
-
-    let nova_linhas = document.getElementsByClassName("armas-info");
-
-    let cont_classes_armas = nova_linhas.length;
-
-    let linha_atual_armasInfo = nova_linhas.length - 1;
-
-    for (let i = 1; i <= 6; i++) {
-        let input =  document.createElement("input");
-
-        nova_linha_armas.appendChild(input);
-
-        switch (i) {
-            case 1:
-                input.setAttribute("id", `tipo${cont_classes_armas}`);
-                input.classList.add("tipo")
-                break;
-            case 2:
-                input.setAttribute("id", `arma${cont_classes_armas}`);
-                input.classList.add("arma")
-                break;
-            case 3:
-                input.setAttribute("id", `alcance${cont_classes_armas}`);
-                input.classList.add("alcance")
-                break;
-            case 4:
-                input.setAttribute("id", `dano${cont_classes_armas}`);
-                input.classList.add("dano")
-                break;
-            case 5:
-                input.setAttribute("type", "number");
-                input.setAttribute("id" , `balas${cont_classes_armas}`);
-                input.classList.add("balas")
-                break;
-            case 6:
-                input.setAttribute("type", "number");
-                input.setAttribute("max", "20");
-                input.setAttribute("id", `critico${cont_classes_armas}`);
-                input.classList.add("critico")
-                break;
-        }
-
-        nova_linhas[linha_atual_armasInfo].appendChild(input);
-    
-    }
-
-    //bordaInferiorArmas();
-}
-
-/* Adicionando Novas Linhas na Tabela Inventário */
-
-let tabela_inventario = document.querySelector("div#tabela-inventario");
-
-function novaLinhaInventario() {
-    let nova_linha_inventario = document.createElement("div");
-    tabela_inventario.appendChild(nova_linha_inventario);
-    nova_linha_inventario.classList.add("inventario-detalhes");
-
-    let nova_linhas = document.getElementsByClassName("inventario-detalhes");
-
-    let cont_classes_inventario = nova_linhas.length;
-
-    let linha_atual_inventarioInfo = nova_linhas.length - 1;
-
-    for (let i = 1; i <= 2; i++) {
-        let input =  document.createElement("input");
-
-        nova_linha_inventario.appendChild(input);
-
-        switch (i) {
-            case 1:
-                input.setAttribute("id", `inventario${cont_classes_inventario}`);
-                input.classList.add("inventario")
-                break;
-            case 2:
-                input.setAttribute("id", `detalhes${cont_classes_inventario}`);
-                input.classList.add("detalhes")
-                break;
-        }
-
-        nova_linhas[linha_atual_inventarioInfo].appendChild(input);
-    
-    }
-}
-
-/* Adicionando Nova Linha aos Traumas */
-
-let tabela_traumas = document.querySelector("div#tabela-traumas");
-
-function novaLinhaTraumas() {
-    let nova_linha_traumas = document.createElement("div");
-    tabela_traumas.appendChild(nova_linha_traumas);
-    nova_linha_traumas.classList.add("traumas-info");
-
-    let nova_linhas = document.getElementsByClassName("traumas-info");
-
-    let cont_classes_traumas = nova_linhas.length;
-
-    let linha_atual_traumasInfo = nova_linhas.length - 1;
-
-    for (let i = 1; i <= 2; i++) {
-        let input =  document.createElement("input");
-
-        nova_linha_traumas.appendChild(input);
-
-        switch (i) {
-            case 1:
-                input.setAttribute("id", `trauma${cont_classes_traumas}`);
-                input.classList.add("trauma")
-                break;
-            case 2:
-                input.setAttribute("id", `descricao${cont_classes_traumas}`);
-                input.classList.add("descricao")
-                break;
-        }
-
-        nova_linhas[linha_atual_traumasInfo].appendChild(input);
-    
-    }
-}
 
 /* Calculando os Pontos Principais */
 
 let valor_pv_div = document.querySelector("div#pv div.pv");
+let vida = 0;
 
 let valor_pe_div = document.querySelector("div#pe div.pe");
 
 let valor_sanidade_div = document.querySelector("div#san div.san");
+let sanidade = 0;
 
 let valor_sorte_div = document.querySelector("div#sorte div.sorte");
 let d100_sorte;
-
-let valor_dm_div = document.querySelector("div#dm div.dm");
 
 let pp_cont = 0;
 
@@ -1116,17 +936,43 @@ function calcPontosPrincipais() {
             alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Principais");
         } else {
             /* Pontos de Vida */
-    
+            /* 1d6 para cada ponto de vigor e resistencia */
+            let d6_vida = pontos_vigor + pontos_resistencia;
+            for (let i = 0; i < d6_vida; i++) {
+                let d6 = Math.floor(Math.random() * 7);
+                while (d6 == 0) {
+                    d6 = Math.floor(Math.random() * 7);
+                }
+                vida = vida + d6;
+            }
+            valor_pv_div.innerHTML = `${vida}`;
+
             /* Pontos de Esforço */
+            /* int + vig + 1d10 */
+            let pe_intvig_d10 = pontos_inteligencia + pontos_vigor;
+            let d10 = Math.floor(Math.random() * 11);
+            pe_intvig_d10 = pe_intvig_d10 + d10;
+            valor_pe_div.innerHTML = `${pe_intvig_d10}`;
     
             /* Sanidade */
-    
+            /* 1d10 para cada ponto de vig e int */
+            let d10_san = pontos_vigor + pontos_inteligencia;
+            for (let i = 0; i < d10_san; i++) {
+                let d10 = Math.floor(Math.random() * 11);
+                while (d10 == 0) {
+                    d10 = Math.floor(Math.random() * 11);
+                }
+                sanidade = sanidade + d10;
+            }
+            valor_sanidade_div.innerHTML = `${sanidade}`;
+
             /* Sorte */
-            d100_sorte = Math.floor(Math.random() * 100);
-            console.log(d100_sorte);
+            d100_sorte = Math.floor(Math.random() * 101);
+            while (d100_sorte == 0) {
+                d100_sorte = Math.floor(Math.random() * 101);
+            }
             valor_sorte_div.innerHTML = `${d100_sorte}`;
     
-            /* DM */
         }
     } else {
         let senha2 = prompt("Digite a senha: ");
@@ -1135,17 +981,47 @@ function calcPontosPrincipais() {
                 alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Principais");
             } else {
                 /* Pontos de Vida */
-        
+                /* 1d6 para cada ponto de vigor e resistencia */
+                vida = 0;
+                let d6_vida = pontos_vigor + pontos_resistencia;
+                for (let i = 0; i < d6_vida; i++) {
+                    let d6 = Math.floor(Math.random() * 7);
+                    while (d6 == 0) {
+                        d6 = Math.floor(Math.random() * 7);
+                    }
+                    vida = vida + d6;
+                }
+                valor_pv_div.innerHTML = `${vida}`;
+
                 /* Pontos de Esforço */
+                /* int + vig + 1d10 */
+                valor_def_div = 0;
+                let pe_intvig_d10 = pontos_inteligencia + pontos_vigor;
+                let d10 = Math.floor(Math.random() * 11);
+                pe_intvig_d10 = pe_intvig_d10 + d10;
+                valor_pe_div.innerHTML = `${pe_intvig_d10}`;
         
                 /* Sanidade */
-        
+                /* 1d10 para cada ponto de vig e int */
+                sanidade = 0;
+                let d10_san = pontos_vigor + pontos_inteligencia;
+                for (let i = 0; i < d10_san; i++) {
+                    let d10 = Math.floor(Math.random() * 11);
+                    while (d10 == 0) {
+                        d10 = Math.floor(Math.random() * 11);
+                    }
+                    sanidade = sanidade + d10;
+                }
+                valor_sanidade_div.innerHTML = `${sanidade}`;
+
                 /* Sorte */
-                d100_sorte = Math.floor(Math.random() * 100);
-                console.log(d100_sorte);
+                /* 1d100 */
+                d100_sorte = Math.floor(Math.random() * 101);
+                while (d100_sorte == 0) {
+                    d100_sorte = Math.floor(Math.random() * 101);
+                }
                 valor_sorte_div.innerHTML = `${d100_sorte}`;
         
-                /* DM */
             }
         } else {
             alert("[ERRO!] Você só pode Definir Status 1 vez");
@@ -1158,10 +1034,13 @@ function calcPontosPrincipais() {
 /* Calculando os Pontos Adicionais */
 
 let valor_desl_div = document.querySelector("div#desl div.desl");
+let deslocamento = 0;
 
 let valor_inic_div = document.querySelector("div#inic div.inic");
+let iniciativa = 0;
 
 let valor_def_div = document.querySelector("div#def div.def");
+let defesa = 0;
 
 let pa_cont = 0;
 
@@ -1171,10 +1050,41 @@ function calcPontosAdicionais() {
             alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Adicionais");
         } else {
             /* Deslocamento */
+            /* 1d10 por ponto em agi */
+            let d10_desl = pontos_agilidade;
+            for (let i = 0; i < d10_desl; i ++) {
+                let d10 = Math.floor(Math.random() * 11);
+                while (d10 == 0) {
+                    d10 = Math.floor(Math.random() * 11);
+                }
+                deslocamento = deslocamento + d10;
+            }
+            valor_desl_div.innerHTML = `${deslocamento}`;
     
             /* Iniciativa */
+            /* 1d4 por ponto em agi */
+            let d4_agi = pontos_agilidade;
+            for (let i = 0; i < d4_agi; i++) {
+                let d4 = Math.floor(Math.random() * 5);
+                while (d4 == 0) {
+                    d4 = Math.floor(Math.random() * 5);
+                }
+                iniciativa = iniciativa + d4;
+            }
+            valor_inic_div.innerHTML = `${iniciativa}`;
     
             /* Defesa */
+            /* 1d10 por ponto em res */
+            let d10_def = pontos_resistencia;
+            for (let i = 0; i < d10_def; i++) {
+                let d10 = Math.floor(Math.random() * 11);
+                while (d10 == 0) {
+                    d10 = Math.floor(Math.random() * 11);
+                }
+                defesa = defesa + d10;
+            }
+            valor_def_div.innerHTML = `${defesa}`;
+
         }
     } else {
         let senha1 = prompt("Digite a senha: ");
@@ -1183,10 +1093,44 @@ function calcPontosAdicionais() {
                 alert("[ERRO!] Adicione todos os pontos disponíveis em seus atributos antes de calcular os Status Adicionais");
             } else {
                 /* Deslocamento */
-        
+                /* 1d10 por ponto em agi */
+                deslocamento = 0;
+                let d10_desl = pontos_agilidade;
+                for (let i = 0; i < d10_desl; i ++) {
+                    let d10 = Math.floor(Math.random() * 11);
+                    while (d10 == 0) {
+                        d10 = Math.floor(Math.random() * 11);
+                    }
+                    deslocamento = deslocamento + d10;
+                }
+                valor_desl_div.innerHTML = `${deslocamento}`;
+
                 /* Iniciativa */
+                /* 1d4 por ponto em agi */
+                iniciativa = 0;
+                let d4_agi = pontos_agilidade;
+                for (let i = 0; i < d4_agi; i++) {
+                    let d4 = Math.floor(Math.random() * 5);
+                    while (d4 == 0) {
+                        d4 = Math.floor(Math.random() * 5);
+                    }
+                    iniciativa = iniciativa + d4;
+                }
+                valor_inic_div.innerHTML = `${iniciativa}`;
         
                 /* Defesa */
+                /* 1d10 por ponto em res */
+                defesa = 0;
+                let d10_def = pontos_resistencia;
+                for (let i = 0; i < d10_def; i++) {
+                    let d10 = Math.floor(Math.random() * 11);
+                    while (d10 == 0) {
+                        d10 = Math.floor(Math.random() * 11);
+                    }
+                    defesa = defesa + d10;
+                }
+                valor_def_div.innerHTML = `${defesa}`;
+
             }
         } else {
             alert("[ERRO!] Você só pode Definir Status 1 vez");

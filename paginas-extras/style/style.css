@@ -8,6 +8,7 @@
     --cor-sombra: rgba(0, 0, 0, 0.418);
     --cor-fundo-menu-hover: rgb(241, 239, 239);
     --cor-fundo-menu-trans: rgb(241, 239, 239, 0.95);
+    --cor-fundo-body: white;
 }
 
 * {
@@ -20,6 +21,7 @@ body {
     width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    background-color: var(--cor-fundo-body);
 }
 
 /* Editando o header */
@@ -110,4 +112,363 @@ nav a {
     width: 100%;
     height: 100%;
     padding-left: 10px;
+}
+
+/* Editando Corpo */
+
+div.div-pericias > div {
+    width: calc(100%/3);
+    padding: 5px;
+    border: 1px solid var(--cor-fonte-principal);
+}
+
+div#main {
+    width: 95vw;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 60vw 35vw;
+    grid-template-rows: 4;
+    gap: 50px;
+}
+
+section {
+    box-shadow: 2px 4px 8px var(--cor-sombra);
+}
+
+h1 {
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    padding: 5px 0px;
+    border: 1px solid var(--cor-fonte-principal);
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px var(--cor-sombra);
+}
+
+h1:hover {
+    border: 2px solid var(--cor-fonte-principal);
+    transition: .3s;
+}
+
+h1 label:hover {
+    cursor: pointer;
+}
+
+h1 label input {
+    text-align: center;
+    font-size: 1em;
+    width: 300px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: var(--cor-fundo-input);
+}
+
+section.secao-dados {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    border: 2px solid var(--cor-fonte-principal);
+    border-radius: 10px;
+}
+
+div#container-esquerda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div#container-esquerda section {
+    margin-top: 40px;
+}
+
+div#container-esquerda h2 {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--cor-fundo-h2);
+    border-radius: 8px 8px 0px 0px;
+}
+
+div.dados-input {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 20px 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+label:hover, input:hover, select:hover {
+    cursor:pointer;
+}
+
+div.dados-input p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.tamanho-input1 {
+    width: 200px;
+}
+
+div.borda-cima-esquerda {
+    border-radius: 10px 0px 0px 0px;
+}
+
+div.borda-cima-direita {
+    border-radius: 0px 10px 0px 0px;
+}
+
+.borda-baixo-esquerda {
+    border-radius: 0px 0px 0px 10px;
+}
+
+.borda-baixo-direita {
+    border-radius: 0px 0px 10px 0px;
+}
+
+div.bordas-superiores {
+    border-radius: 10px 10px 0px 0px;
+}
+
+div.bordas-inferiores {
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* Seção Armas */
+
+
+section#secao-armas {
+    width: 90%;
+    margin:40px auto;
+    padding: 20px 20px 0px 20px;
+}
+
+section#secao-armas div.adicionar-linha {
+    margin-left: 97%;
+    transform: translateY(-20px);
+}
+
+section#secao-inventario div.adicionar-linha {
+    margin-left: 97%;
+    transform: translateY(-20px);
+}
+
+section#secao-traumas div.adicionar-linha {
+    margin-left: 90%;
+    transform: translateY(-20px);
+}
+
+section#secao-armas div#tabela-armas {
+    width: 100%;
+}
+
+section#secao-armas div#tabela-armas div {
+    display: flex;
+    width: 100%;
+}
+
+section#secao-armas div#tabela-armas div input {
+    height: 30px;
+    width: calc(100%/6);
+    border: 1px solid var(--cor-fonte-principal);
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+}
+
+section#secao-armas div#tabela-armas div.armas-info:hover input  {
+    background-color: var(--cor-fundo-pontos);
+}
+
+section#secao-armas div#tabela-armas div.armas-info:hover input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-h2);
+}
+
+section#secao-armas div#tabela-armas div input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-pontos);
+}
+
+label.hide {
+    display: none;
+}
+
+div#armas-info {
+    font-weight: bold;
+    background-color: var(--cor-fundo-h2);
+}
+
+div.adicionar-linha {
+    font-weight: bold;
+    font-size: 2em;
+    max-width: 30px;
+    min-width: 30px;
+    padding: 0px 5px;
+}
+
+div#alcance {
+    font-size: 0.8em;
+    font-weight: bolder;
+}
+
+div.adicionar-linha:hover {
+    font-weight: bolder;
+    font-size: 2.3em;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+section#secao-armas div#tabela-armas div input {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Seção Inventário */
+
+section#secao-inventario {
+    width: 90%;
+    margin:40px auto;
+    padding: 20px 20px 0px 20px;
+}
+
+section#secao-inventario div#tabela-inventario {
+    width: 100%;
+}
+
+section#secao-inventario div#tabela-inventario div {
+    display: flex;
+    width: 100%;
+}
+
+section#secao-inventario div#tabela-inventario div#inventario-detalhes {
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--cor-fundo-h2);
+}
+
+section#secao-inventario div#tabela-inventario div#inventario-detalhes div {
+    height: 30px;
+    padding: 5px 80px;
+    border: 1px solid var(--cor-fonte-principal);
+    text-align: center;
+}
+
+div#inventario {
+    border-radius: 10px 0px 0px 0px;
+}
+
+div#detalhes {
+ border-radius: 0px 10px 0px 0px;
+}
+
+section#secao-inventario div#tabela-inventario div input {
+    height: 30px;
+    width: calc(100%/2);
+    border: 1px solid var(--cor-fonte-principal);
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+}
+
+section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover input  {
+    background-color: var(--cor-fundo-pontos);
+    transition: .3s;
+}
+
+section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-h2);
+}
+
+section#secao-inventario div#tabela-inventario div input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-pontos);
+}
+
+div#inventario-detalhes {
+    font-weight: bold;
+    background-color: var(--cor-fundo-h2);
+}
+
+section#secao-inventario div#tabela-inventario div input {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Editando a Tabela dos Traumas */
+
+section#secao-traumas {
+    position: relative;
+}
+
+div#tabela-traumas {
+    width: 100%;
+    margin: auto;
+    padding: 5% 5% 0 5%;
+}
+
+div#tabela-traumas div {
+    display: flex;
+    width: 100%;
+}
+
+div#tabela-traumas div input {
+    width: calc(100%/2);
+}
+
+div#traumas-info div {
+    font-weight: bold;
+    text-align: center;
+}
+
+div#nome-trauma {
+    border: 1px solid var(--cor-fonte-principal);
+    border-radius: 10px 0px 0px 0px;
+    background-color: var(--cor-fundo-h2);
+    padding: 5px 20px;
+}
+
+div#descricao-trauma {
+    border: 1px solid var(--cor-fonte-principal);
+    border-radius: 0px 10px 0px 0px;
+    background-color: var(--cor-fundo-h2);
+    padding: 5px 20px;
+}
+
+div.traumas-info input {
+    border: 1px solid var(--cor-fonte-principal);
+    outline: 0;
+    height: 25px;
+    text-align: center;
+}
+
+div.traumas-info:hover input {
+    background-color: var(--cor-fundo-pontos);
+    transition: .3s;
+}
+
+div.traumas-info:hover input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-h2);
+    transition: .3s;
+}
+
+div#tabela-traumas div input:focus {
+    outline: 0;
+    border: 2px solid var(--cor-fonte-principal);
+    background-color: var(--cor-fundo-pontos);
+}
+
+section#secao-traumas div.adicionar-linha:hover {
+    transition: .3s;
 }
