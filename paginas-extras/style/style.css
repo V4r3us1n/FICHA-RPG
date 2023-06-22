@@ -24,6 +24,14 @@ body {
     background-color: var(--cor-fundo-body);
 }
 
+textarea {
+    outline: none;
+    resize: none;
+    overflow-y: hidden;
+    width: 250px;
+    height: 30px;
+}
+
 /* Editando o header */
 
 header {
@@ -31,10 +39,9 @@ header {
     border-bottom: 2px solid var(--cor-fonte-principal);
 }
 
-header p {
+header h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
 }
 
 /* Menu Lateral */
@@ -105,7 +112,7 @@ nav div:hover {
     transition: .3s;
 }
 
-nav a {
+nav a, nav p {
     text-decoration: none;
     color: var(--cor-fonte-principal);
     font-weight: bold;
@@ -133,34 +140,6 @@ div#main {
 
 section {
     box-shadow: 2px 4px 8px var(--cor-sombra);
-}
-
-h1 {
-    text-align: center;
-    width: 500px;
-    margin: auto;
-    padding: 5px 0px;
-    border: 1px solid var(--cor-fonte-principal);
-    border-radius: 10px;
-    box-shadow: 1px 2px 4px var(--cor-sombra);
-}
-
-h1:hover {
-    border: 2px solid var(--cor-fonte-principal);
-    transition: .3s;
-}
-
-h1 label:hover {
-    cursor: pointer;
-}
-
-h1 label input {
-    text-align: center;
-    font-size: 1em;
-    width: 300px;
-    border: 0px;
-    border-radius: 5px;
-    background-color: var(--cor-fundo-input);
 }
 
 section.secao-dados {
@@ -199,7 +178,7 @@ label {
     font-weight: bold;
 }
 
-label:hover, input:hover, select:hover {
+label:hover, input:hover, select:hover, textarea:hover {
     cursor:pointer;
 }
 
@@ -240,6 +219,10 @@ div.bordas-inferiores {
 
 /* Seção Armas */
 
+div.armas-info {
+    height: auto;
+}
+
 
 section#secao-armas {
     width: 90%;
@@ -272,7 +255,7 @@ section#secao-armas div#tabela-armas div {
 }
 
 section#secao-armas div#tabela-armas div input {
-    height: 30px;
+    min-height: 30px;
     width: calc(100%/6);
     border: 1px solid var(--cor-fonte-principal);
     align-items: center;
@@ -280,20 +263,34 @@ section#secao-armas div#tabela-armas div input {
     padding: 2px;
 }
 
-section#secao-armas div#tabela-armas div.armas-info:hover input  {
+section#secao-armas div#tabela-armas div textarea {
+    height: auto;
+    width: calc(100%/6);
+    border: 1px solid var(--cor-fonte-principal);
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+input[type = "number"] {
+    font-size: 5px;
+}
+
+section#secao-armas div#tabela-armas div.armas-info:hover input,  section#secao-armas div#tabela-armas div.armas-info:hover textarea {
     background-color: var(--cor-fundo-pontos);
 }
 
-section#secao-armas div#tabela-armas div.armas-info:hover input:focus {
+section#secao-armas div#tabela-armas div.armas-info:hover input:focus, section#secao-armas div#tabela-armas div.armas-info:hover textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-h2);
 }
 
-section#secao-armas div#tabela-armas div input:focus {
+section#secao-armas div#tabela-armas div input:focus, section#secao-armas div#tabela-armas div textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-pontos);
+    height: 30px;
 }
 
 label.hide {
@@ -328,10 +325,21 @@ div.adicionar-linha:hover {
 
 section#secao-armas div#tabela-armas div input {
     font-weight: bold;
-    font-size: 1em;
+    font-size: 0.9em;
+}
+
+section#secao-armas div#tabela-armas div textarea {
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* Seção Inventário */
+
+section#secao-inventario div#tabela-inventario div textarea.inventario, section#secao-inventario div#tabela-inventario div textarea.detalhes {
+    font-size: 1.1em;
+    padding: 5px;
+    font-weight: bold;
+}
 
 section#secao-inventario {
     width: 90%;
@@ -368,7 +376,7 @@ div#detalhes {
  border-radius: 0px 10px 0px 0px;
 }
 
-section#secao-inventario div#tabela-inventario div input {
+section#secao-inventario div#tabela-inventario div textarea {
     height: 30px;
     width: calc(100%/2);
     border: 1px solid var(--cor-fonte-principal);
@@ -377,18 +385,18 @@ section#secao-inventario div#tabela-inventario div input {
     padding: 2px;
 }
 
-section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover input  {
+section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover textarea {
     background-color: var(--cor-fundo-pontos);
     transition: .3s;
 }
 
-section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover input:focus {
+section#secao-inventario div#tabela-inventario div.inventario-detalhes:hover textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-h2);
 }
 
-section#secao-inventario div#tabela-inventario div input:focus {
+section#secao-inventario div#tabela-inventario div textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-pontos);
@@ -399,7 +407,7 @@ div#inventario-detalhes {
     background-color: var(--cor-fundo-h2);
 }
 
-section#secao-inventario div#tabela-inventario div input {
+section#secao-inventario div#tabela-inventario div textarea {
     font-weight: bold;
     font-size: 1em;
 }
@@ -408,6 +416,7 @@ section#secao-inventario div#tabela-inventario div input {
 
 section#secao-traumas {
     position: relative;
+    margin: 0px auto;
 }
 
 div#tabela-traumas {
@@ -421,7 +430,7 @@ div#tabela-traumas div {
     width: 100%;
 }
 
-div#tabela-traumas div input {
+div#tabela-traumas div input, div#tabela-traumas div textarea {
     width: calc(100%/2);
 }
 
@@ -444,26 +453,26 @@ div#descricao-trauma {
     padding: 5px 20px;
 }
 
-div.traumas-info input {
+div.traumas-info input, div.traumas-info textarea {
     border: 1px solid var(--cor-fonte-principal);
     outline: 0;
     height: 25px;
     text-align: center;
 }
 
-div.traumas-info:hover input {
+div.traumas-info:hover input, div.traumas-info:hover textarea {
     background-color: var(--cor-fundo-pontos);
     transition: .3s;
 }
 
-div.traumas-info:hover input:focus {
+div.traumas-info:hover input:focus, div.traumas-info:hover textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-h2);
     transition: .3s;
 }
 
-div#tabela-traumas div input:focus {
+div#tabela-traumas div input:focus, div#tabela-traumas div textarea:focus {
     outline: 0;
     border: 2px solid var(--cor-fonte-principal);
     background-color: var(--cor-fundo-pontos);

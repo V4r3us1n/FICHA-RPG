@@ -1,3 +1,25 @@
+if (localStorage.getItem("token") == null) {
+    alert("Você precisa estar logado para acessar essa página");
+    window.location.href = "./paginas-extras/login.html";
+}
+
+let userLogado = JSON.parse(localStorage.getItem("userLogado"));
+
+let logado = document.querySelector("#logado");
+
+function sair() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userLogado");
+    window.location.href = "./paginas-extras/login.html";
+}
+
+let boddy = document.querySelector("body");
+boddy.addEventListener("load", carregarInfo());
+
+function carregarInfo() {
+    
+}
+
 /* ATRIBUTOS */
 
 /* Quantos pontos tem em cada status*/
@@ -939,9 +961,9 @@ function calcPontosPrincipais() {
             /* 1d6 para cada ponto de vigor e resistencia */
             let d6_vida = pontos_vigor + pontos_resistencia;
             for (let i = 0; i < d6_vida; i++) {
-                let d6 = Math.floor(Math.random() * 7);
+                let d6 = Math.floor(Math.random() * 9);
                 while (d6 == 0) {
-                    d6 = Math.floor(Math.random() * 7);
+                    d6 = Math.floor(Math.random() * 9);
                 }
                 vida = vida + d6;
             }
@@ -985,9 +1007,9 @@ function calcPontosPrincipais() {
                 vida = 0;
                 let d6_vida = pontos_vigor + pontos_resistencia;
                 for (let i = 0; i < d6_vida; i++) {
-                    let d6 = Math.floor(Math.random() * 7);
+                    let d6 = Math.floor(Math.random() * 9);
                     while (d6 == 0) {
-                        d6 = Math.floor(Math.random() * 7);
+                        d6 = Math.floor(Math.random() * 9);
                     }
                     vida = vida + d6;
                 }
@@ -1084,7 +1106,6 @@ function calcPontosAdicionais() {
                 defesa = defesa + d10;
             }
             valor_def_div.innerHTML = `${defesa}`;
-
         }
     } else {
         let senha1 = prompt("Digite a senha: ");

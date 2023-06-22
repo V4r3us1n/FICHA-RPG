@@ -23,9 +23,12 @@
                 <div id="modo-noturno-simbolo"></div>
             </div>
         </div>
+        <div>
+            <p onclick="sair()">Sair</p>
+        </div>
     </nav>
     <header>
-        <p>FICHA AUTOMÁTICA RPG</p>
+        <h1 id="logado">FICHA AUTOMÁTICA RPG</h1>
         <div id="nav">
             <div class="nav">
                 <div class="nav-nav">
@@ -50,36 +53,36 @@
                             <div id="critico" class="borda-cima-direita">CRÍTICO</div>
                         </div>
                         <div class="armas-info">
-                            <label for="tipo1" class="hide">hide</label><input type="text" id="tipo1"  class="tipo">
-                            <label for="arma1" class="hide">hide</label><input type="text"id="arma1"  class="arma">
-                            <label for="alcance1" class="hide">hide</label><input type="text" id="alcance1" class="alcance">
-                            <label for="dano1" class="hide">hide</label><input type="text" id="dano1" class="dano">
-                            <label for="balas1" class="hide">hide</label><input type="number" id="balas1" class="balas">
-                            <label for="critico1" class="hide">hide</label><input type="number" id="critico1" class="critico" max="20">
+                            <textarea title="no-label" id="tipo1"  class="tipo" rows="1"></textarea>
+                            <textarea title="no-label" id="arma1"  class="arma" rows="1"></textarea>
+                            <textarea title="no-label" id="alcance1" class="alcance" rows="1"></textarea>
+                            <textarea title="no-label" id="dano1" class="dano" rows="1"></textarea>
+                            <input title="no-label" type="number" id="balas1" class="balas" min="0">
+                            <textarea title="no-label" type="text" id="critico1" class="critico" rows="1"></textarea>
                         </div>
                         <div class="armas-info">
-                            <label for="tipo2" class="hide">hide</label><input type="text" id="tipo2"  class="tipo">
-                            <label for="arma2" class="hide">hide</label><input type="text"id="arma2"  class="arma">
-                            <label for="alcance2" class="hide">hide</label><input type="text" id="alcance2" class="alcance">
-                            <label for="dano2" class="hide">hide</label><input type="text" id="dano2" class="dano">
-                            <label for="balas2" class="hide">hide</label><input type="number" id="balas2" class="balas">
-                            <label for="critico2" class="hide">hide</label><input type="number" id="critico2" class="critico" max="20">
+                            <textarea title="no-label" type="text" id="tipo2"  class="tipo" rows="1"></textarea>
+                            <textarea title="no-label" type="text"id="arma2"  class="arma" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="alcance2" class="alcance" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="dano2" class="dano" rows="1"></textarea>
+                            <input title="no-label" type="number" id="balas2" class="balas">
+                            <textarea title="no-label" type="number" id="critico2" class="critico" rows="1"></textarea>
                         </div>
                         <div class="armas-info">
-                            <label for="tipo3" class="hide">hide</label><input type="text" id="tipo3"  class="tipo">
-                            <label for="arma3" class="hide">hide</label><input type="text"id="arma3"  class="arma">
-                            <label for="alcance3" class="hide">hide</label><input type="text" id="alcance3" class="alcance">
-                            <label for="dano3" class="hide">hide</label><input type="text" id="dano3" class="dano">
-                            <label for="balas3" class="hide">hide</label><input type="number" id="balas3" class="balas">
-                            <label for="critico3" class="hide">hide</label><input type="number" id="critico3" class="critico" max="20">
+                            <textarea title="no-label" type="text" id="tipo3"  class="tipo" rows="1"></textarea>
+                            <textarea title="no-label" type="text"id="arma3"  class="arma" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="alcance3" class="alcance" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="dano3" class="dano" rows="1"></textarea>
+                            <input title="no-label" type="number" id="balas3" class="balas">
+                            <textarea title="no-label" type="number" id="critico3" class="critico" rows="1"></textarea>
                         </div>
                         <div class="armas-info">
-                            <label for="tipo4" class="hide">hide</label><input type="text" id="tipo4"  class="tipo">
-                            <label for="arma4" class="hide">hide</label><input type="text"id="arma4"  class="arma">
-                            <label for="alcance4" class="hide">hide</label><input type="text" id="alcance4" class="alcance">
-                            <label for="dano4" class="hide">hide</label><input type="text" id="dano4" class="dano">
-                            <label for="balas4" class="hide">hide</label><input type="number" id="balas4" class="balas">
-                            <label for="critico4" class="hide">hide</label><input type="number" id="critico4" class="critico" max="20">
+                            <textarea title="no-label" type="text" id="tipo4"  class="tipo" rows="1"></textarea>
+                            <textarea title="no-label" type="text"id="arma4"  class="arma" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="alcance4" class="alcance" rows="1"></textarea>
+                            <textarea title="no-label" type="text" id="dano4" class="dano" rows="1"></textarea>
+                            <input title="no-label" type="number" id="balas4" class="balas">
+                            <textarea title="no-label" type="number" id="critico4" class="critico" rows="1"></textarea>
                         </div>
                     </div>
                     <div class="adicionar-linha" onclick="novaLinhaArmas()">+</div>
@@ -92,32 +95,32 @@
                         <div id="detalhes">Detalhes</div>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario1" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes1" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario1" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes1" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario2" id="inventario2" class="inventario" type="text">
-                        <input title="detalhes2" id="detalhes2" class="detalhes" type="text">
+                        <textarea title="inventario2" id="inventario2" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes2" id="detalhes2" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario3" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes3" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario3" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes3" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario4" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes4" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario4" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes4" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario5" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes5" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario5" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes5" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario6" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes6" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario6" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes6" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                     <div class="inventario-detalhes">
-                        <input title="inventario1" id="inventario7" class="inventario" type="text">
-                        <input title="detalhes1" id="detalhes7" class="detalhes" type="text">
+                        <textarea title="inventario1" id="inventario7" class="inventario" type="text" rows="1"></textarea>
+                        <textarea title="detalhes1" id="detalhes7" class="detalhes" type="text" rows="1"></textarea>
                     </div>
                 </div>
                 <div class="adicionar-linha" onclick="novaLinhaInventario()">+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/cadastrar.css">
+</head>
+<body>
+    <main>
+        <h1>Cadastro</h1>
+        <hr>
+        <div id="form" method="post" autocomplete="on">    
+            <div class="info fieldset">
+                <div>
+                    <p class="texto">
+                        <label for="usuario" id="userLabel">Usuário: </label>
+                        <input type="text"id="usuario" class="inserir-info" required>
+                    </p>
+                    <p class="texto">
+                        <label for="confirmar-usuario" id="userLabel2">Confirmar Usuário:</label>
+                        <input type="text" id="confirmar-usuario" class="inserir-info" required>
+                    </p>
+                </div>
+                <div>
+                    <p class="texto">
+                        <label for="senha" id="senhaLabel">Senha: </label>
+                        <input type="password" id="senha" class="inserir-info" required>
+                    </p>
+                    <p class="texto">
+                        <label for="confirmar-senha" id="senhaLabel2">Confirmar Senha: </label>
+                        <input type="password" id="confirmar-senha" class="inserir-info" required>
+                    </p>
+                </div>
+                <p class="checkbox">
+                    <input type="checkbox" id="exibir-senha" onclick="exibirSenha()">
+                    <label for="exibir-senha">Exibir senha</label>
+                </p>
+            </div>
+            <hr class="fim-fieldset-info">
+            <div class="button fieldset">
+            <div class="container">
+                <button id="cadastrar" onclick="cadastrarUsuario()">Cadastrar</button>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="script/cadastrar.js"></script>
+</body>
+</html>

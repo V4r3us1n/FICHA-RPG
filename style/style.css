@@ -31,10 +31,9 @@ header {
     border-bottom: 2px solid var(--cor-fonte-principal);
 }
 
-header p {
+header h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
 }
 
 /* Menu Lateral */
@@ -105,7 +104,7 @@ nav div:hover {
     transition: .3s;
 }
 
-nav a {
+nav a, nav p {
     text-decoration: none;
     color: var(--cor-fonte-principal);
     font-weight: bold;
@@ -129,7 +128,7 @@ section {
     box-shadow: 2px 4px 8px var(--cor-sombra);
 }
 
-h1 {
+main h1 {
     text-align: center;
     width: 500px;
     margin: auto;
@@ -139,16 +138,16 @@ h1 {
     box-shadow: 1px 2px 4px var(--cor-sombra);
 }
 
-h1:hover {
+main h1:hover {
     border: 2px solid var(--cor-fonte-principal);
     transition: .3s;
 }
 
-h1 label:hover {
+main h1 label:hover {
     cursor: pointer;
 }
 
-h1 label input {
+main h1 label input {
     text-align: center;
     font-size: 1em;
     width: 300px;

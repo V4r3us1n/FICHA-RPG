@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <main>
+        <h1>Login</h1>
+        <hr>
+        <div id="form" autocomplete="on">    
+            <div class="info">
+                <p class="texto">
+                    <label for="usuario" id="userLabel">Usuário: </label>
+                    <input type="text"id="usuario" class="inserir-info" required>
+                </p>
+                <p class="texto">
+                    <label for="senha" id="senhaLabel">Senha: </label>
+                    <input type="password" id="senha" class="inserir-info" required>
+                </p>
+                <p class="checkbox">
+                    <input type="checkbox" id="check">
+                    <label for="check">Manter-se conectado</label>
+                </p>
+            </div>
+            <hr class="fim-fieldset-info">
+            <div class="button">
+            <div class="container">
+                <input type="submit" value="Entrar" id="entrar" class="entrar" onclick="entrar()">
+                <p>OU</p>
+                <button id="cadastrar" onclick="irParaCadastro()"><a href="../paginas-extras/cadastrar.html">Cadastre-se</a></button>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="script/login.js"></script>
+</body>
+</html>

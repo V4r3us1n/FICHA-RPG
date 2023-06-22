@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo-main : rgba(0, 0, 0, 0.521);
+    --cor-fonte-principal: rgba(255, 255, 255, 0.87);
+    --cor-info-incorreta: rgba(235, 59, 59, 0.904);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-fonte-principal);
+    background-image: url(../../imagens/imagem-dado.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+main {
+    width: 520px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border: 2px solid var(--cor-fonte-principal);
+    border-radius: 20px;
+    background-color: var(--cor-fundo-main);
+}
+
+div.fieldset {
+    border: 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.8em;
+}
+
+hr {
+    margin: 10px 0px;
+    border: 1px solid var(--cor-fonte-principal);
+}
+
+input, button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0.808);
+}
+
+/* Campo de entrar/cadastrar */
+
+div.button {
+    position: relative;
+    height: 50px;
+    margin-top: 20px;
+}
+
+div.button p {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+div.button button {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: var(--cor-fonte-principal);
+}
+
+div.button input {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: var(--cor-fonte-principal);
+}
+
+div.button button, div.button input {
+    width: 60%;
+    height: 35px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+div.button button:hover, div.button input:hover {
+    background-color: var(--cor-fundo-main);
+    width: 62%;
+    height: 37px;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 16px;
+}
+
+/* Campo para inserir dados de login */
+
+div.info {
+    position: relative;
+    padding: 20px 5px 0px 5px;
+    height: 380px;
+}
+
+div.info p {
+    margin-bottom: 15px;
+}
+
+p.checkbox {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+p.checkbox:hover {
+    cursor: pointer;
+}
+
+p.checkbox label:hover {
+    cursor: pointer;
+}
+
+p.checkbox input:hover {
+    cursor: pointer;
+}
+
+p.texto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+p.texto label {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+p.texto input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+input#itext:hover, input#ipassword:hover {
+    border: 2px solid var(--cor-fonte-principal);
+    cursor: pointer;
+    background-color: var(--cor-fundo-main);
+    transition: .2s;
+}
+
+input#itext:focus, input#ipassword:focus {
+    border: 2px solid var(--cor-fonte-principal);
+    cursor: pointer;
+    background-color: var(--cor-fundo-main);
+    transition: .2s;
+}
+
+input {
+    color: var(--cor-fonte-principal);
+    font-size: 14px;
+}
+
+.dados-incorretos {
+    animation: dados-incorretos 2s;
+}
+
+@keyframes dados-incorretos {
+    0% {
+        color: var(--cor-fonte-principal);
+    }
+
+    50% {
+        color: var(--cor-info-incorreta);
+    }
+
+    100% {
+        color: var(--cor-fonte-principal);
+    }
+}
